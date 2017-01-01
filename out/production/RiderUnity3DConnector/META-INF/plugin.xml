@@ -20,13 +20,17 @@
 
   <depends>com.intellij.modules.lang</depends>
 
+  <project-components>
+    <component><implementation-class>com.potter.riderunity3dconnector.UnityConnectorProjectComponent</implementation-class></component>
+  </project-components>
+
   <extensions defaultExtensionNs="com.intellij">
     <!-- Add your extensions here -->
   </extensions>
 
   <actions>
     <!-- Add your actions here -->
-    <action id="GotoCodeSettingsAction" class="com.potter.riderunity3dconnector.GotoCodeSettingsAction" text="Unity _Connector" icon="icon.png">
+    <action id="GotoCodeSettingsAction" class="com.potter.riderunity3dconnector.UnityConnectorSettingsAction" text="Unity _Connector" icon="icon.png">
       <add-to-group group-id="ToolsMenu" anchor="first" />
     </action>
   </actions>

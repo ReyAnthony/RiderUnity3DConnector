@@ -33,7 +33,7 @@ public class UnityConnectorServer {
         this.project = project;
         if (serverRunnable != null && serverRunnable.isRunning()) {
             // Server is already running
-            return false;
+            return true;
         }
         try {
             datagramSocket = new DatagramSocket(port);

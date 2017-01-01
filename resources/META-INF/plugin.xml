@@ -20,6 +20,10 @@
 
   <depends>com.intellij.modules.lang</depends>
 
+  <project-components>
+    <component><implementation-class>com.potter.riderunity3dconnector.UnityConnectorProjectComponent</implementation-class></component>
+  </project-components>
+
   <extensions defaultExtensionNs="com.intellij">
     <!-- Add your extensions here -->
   </extensions>
