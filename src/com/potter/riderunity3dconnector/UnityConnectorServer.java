@@ -9,6 +9,7 @@ import com.intellij.openapi.vfs.VirtualFile;
 import java.io.IOException;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
+import java.net.InetAddress;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -93,6 +94,13 @@ public class UnityConnectorServer {
 
                         new OpenFileDescriptor(project, vf, line, column).navigate(true);
                     });
+
+                    InetAddress senderAddress = datagramPacket.getAddress();
+                    int senderPort = datagramPacket.getPort();
+                    String sendDataRaw = "ok";
+                    byte[] sendData = sendDataRaw.getBytes();
+                    DatagramPacket sendPacket = new DatagramPacket(sendData, sendData.length, senderAddress, senderPort);
+                    datagramSocket.send(sendPacket);
                 } catch (IOException e) {
                     e.printStackTrace();
                     stop();

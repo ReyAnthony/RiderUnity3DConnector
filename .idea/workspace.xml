@@ -2,14 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b66335be-2a2c-493f-bc4d-2dfcbb970490" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/potter/riderunity3dconnector/UnityConnectorProjectComponent.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/RiderUnity3DConnector/com/potter/riderunity3dconnector/GotoCodeServer$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/RiderUnity3DConnector/com/potter/riderunity3dconnector/GotoCodeServer$ServerRunnable.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/RiderUnity3DConnector/com/potter/riderunity3dconnector/GotoCodeServer.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/RiderUnity3DConnector/com/potter/riderunity3dconnector/GotoCodeSettingsAction.class" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RiderUnity3DConnector.jar" afterPath="$PROJECT_DIR$/RiderUnity3DConnector.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RiderUnity3DConnector/com/potter/riderunity3dconnector/UnityConnectorServer$ServerRunnable.class" afterPath="$PROJECT_DIR$/out/production/RiderUnity3DConnector/com/potter/riderunity3dconnector/UnityConnectorServer$ServerRunnable.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RiderUnity3DConnector/com/potter/riderunity3dconnector/UnityConnectorServer.class" afterPath="$PROJECT_DIR$/out/production/RiderUnity3DConnector/com/potter/riderunity3dconnector/UnityConnectorServer.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/META-INF/plugin.xml" afterPath="$PROJECT_DIR$/resources/META-INF/plugin.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/potter/riderunity3dconnector/UnityConnectorServer.java" afterPath="$PROJECT_DIR$/src/com/potter/riderunity3dconnector/UnityConnectorServer.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -29,8 +25,8 @@
       <file leaf-file-name="UnityConnectorServer.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/potter/riderunity3dconnector/UnityConnectorServer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
-              <caret line="27" column="43" lean-forward="false" selection-start-line="27" selection-start-column="43" selection-end-line="27" selection-end-column="43" />
+            <state relative-caret-position="684">
+              <caret line="91" column="48" lean-forward="true" selection-start-line="91" selection-start-column="48" selection-end-line="91" selection-end-column="48" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -84,9 +80,9 @@
         <option value="$PROJECT_DIR$/src/com/potter/riderunity3dconnector/GotoCodeServer.java" />
         <option value="$PROJECT_DIR$/src/com/potter/riderunity3dconnector/GotoCodeSettingsAction.java" />
         <option value="$PROJECT_DIR$/src/com/potter/riderunity3dconnector/UnityConnectorSettingsAction.java" />
-        <option value="$PROJECT_DIR$/src/com/potter/riderunity3dconnector/UnityConnectorServer.java" />
         <option value="$PROJECT_DIR$/resources/META-INF/plugin.xml" />
         <option value="$PROJECT_DIR$/src/com/potter/riderunity3dconnector/UnityConnectorProjectComponent.java" />
+        <option value="$PROJECT_DIR$/src/com/potter/riderunity3dconnector/UnityConnectorServer.java" />
       </list>
     </option>
   </component>
@@ -798,8 +794,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/potter/riderunity3dconnector/UnityConnectorServer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="27" column="43" lean-forward="false" selection-start-line="27" selection-start-column="43" selection-end-line="27" selection-end-column="43" />
+        <state relative-caret-position="684">
+          <caret line="91" column="48" lean-forward="true" selection-start-line="91" selection-start-column="48" selection-end-line="91" selection-end-column="48" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
