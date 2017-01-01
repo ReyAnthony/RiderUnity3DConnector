@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b66335be-2a2c-493f-bc4d-2dfcbb970490" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RiderUnity3DConnector.jar" afterPath="$PROJECT_DIR$/RiderUnity3DConnector.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RiderUnity3DConnector/com/potter/riderunity3dconnector/UnityConnectorServer$ServerRunnable.class" afterPath="$PROJECT_DIR$/out/production/RiderUnity3DConnector/com/potter/riderunity3dconnector/UnityConnectorServer$ServerRunnable.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RiderUnity3DConnector/com/potter/riderunity3dconnector/UnityConnectorServer.class" afterPath="$PROJECT_DIR$/out/production/RiderUnity3DConnector/com/potter/riderunity3dconnector/UnityConnectorServer.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/potter/riderunity3dconnector/UnityConnectorServer.java" afterPath="$PROJECT_DIR$/src/com/potter/riderunity3dconnector/UnityConnectorServer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/potter/riderunity3dconnector/SettingsDialog.java" afterPath="$PROJECT_DIR$/src/com/potter/riderunity3dconnector/SettingsDialog.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -22,11 +18,35 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="UnityConnectorServer.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="UnityConnectorServer.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/potter/riderunity3dconnector/UnityConnectorServer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="684">
+            <state relative-caret-position="1275">
               <caret line="91" column="48" lean-forward="true" selection-start-line="91" selection-start-column="48" selection-end-line="91" selection-end-column="48" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UnityConnectorSettingsAction.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/potter/riderunity3dconnector/UnityConnectorSettingsAction.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SettingsDialog.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/potter/riderunity3dconnector/SettingsDialog.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="930">
+              <caret line="62" column="35" lean-forward="true" selection-start-line="62" selection-start-column="35" selection-end-line="62" selection-end-column="35" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -83,6 +103,7 @@
         <option value="$PROJECT_DIR$/resources/META-INF/plugin.xml" />
         <option value="$PROJECT_DIR$/src/com/potter/riderunity3dconnector/UnityConnectorProjectComponent.java" />
         <option value="$PROJECT_DIR$/src/com/potter/riderunity3dconnector/UnityConnectorServer.java" />
+        <option value="$PROJECT_DIR$/src/com/potter/riderunity3dconnector/SettingsDialog.java" />
       </list>
     </option>
   </component>
@@ -756,16 +777,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/potter/riderunity3dconnector/UnityConnectorSettingsAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/META-INF/plugin.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
@@ -776,9 +787,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/potter/riderunity3dconnector/SettingsDialog.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="585">
-          <caret line="58" column="77" lean-forward="true" selection-start-line="58" selection-start-column="77" selection-end-line="58" selection-end-column="77" />
-          <folding />
+        <state relative-caret-position="930">
+          <caret line="62" column="35" lean-forward="true" selection-start-line="62" selection-start-column="35" selection-end-line="62" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -794,8 +807,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/potter/riderunity3dconnector/UnityConnectorServer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="684">
+        <state relative-caret-position="1275">
           <caret line="91" column="48" lean-forward="true" selection-start-line="91" selection-start-column="48" selection-end-line="91" selection-end-column="48" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/potter/riderunity3dconnector/UnityConnectorSettingsAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

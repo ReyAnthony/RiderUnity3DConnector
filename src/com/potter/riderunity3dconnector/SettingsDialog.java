@@ -6,8 +6,6 @@ import org.jetbrains.annotations.Nullable;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.text.NumberFormat;
 import java.util.Locale;
 
@@ -19,7 +17,7 @@ public class SettingsDialog extends DialogWrapper {
         super(project, canBeParent);
         this.project = project;
         init();
-        setTitle("GotoCode Settings");
+        setTitle("Unity3D Connector Settings");
     }
 
     @Nullable
@@ -50,20 +48,16 @@ public class SettingsDialog extends DialogWrapper {
 
         JCheckBox cb = new JCheckBox();
         cb.setSelected(UnityConnectorServer.getInstance().isRunning());
-        cb.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                int port = Integer.parseInt(portField.getText());
-                JCheckBox cb = (JCheckBox)e.getSource();
-                if(cb.isSelected()) {
-                    boolean started = UnityConnectorServer.getInstance().startServer(port, project);
-                    cb.setSelected(started);
-                } else {
-                    UnityConnectorServer.getInstance().stopServer();
-                }
+        cb.addActionListener(e -> {
+            int port = Integer.parseInt(portField.getText());
+            JCheckBox cb1 = (JCheckBox)e.getSource();
+            if(cb1.isSelected()) {
+                boolean started = UnityConnectorServer.getInstance().startServer(port, project);
+                cb1.setSelected(started);
+            } else {
+                UnityConnectorServer.getInstance().stopServer();
             }
         });
-
 
         fieldsPanel.add(portLabel);
         fieldsPanel.add(portField);
