@@ -1,31 +1,19 @@
 package com.potter.riderunity3dconnector;
 
+import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 
-public class UnityConnectorProjectComponent implements ProjectComponent {
+public class UnityConnectorApplicationComponent implements ApplicationComponent {
 
-    final Project project;
-
-    public UnityConnectorProjectComponent(Project project) {
+    public UnityConnectorApplicationComponent() {
         super();
-        this.project = project;
-    }
-
-    @Override
-    public void projectOpened() {
-
-    }
-
-    @Override
-    public void projectClosed() {
-
     }
 
     @Override
     public void initComponent() {
-        UnityConnectorServer.getInstance().startServer(11234, project);
+        UnityConnectorServer.getInstance().startServer();
     }
 
     @Override

@@ -17,7 +17,7 @@ public class SettingsDialog extends DialogWrapper {
         super(project, canBeParent);
         this.project = project;
         init();
-        setTitle("Unity3D Connector Settings");
+        setTitle("Unity3D Connector Status");
     }
 
     @Nullable
@@ -31,36 +31,21 @@ public class SettingsDialog extends DialogWrapper {
         JPanel mainPanel = new JPanel(new BorderLayout());
         JPanel fieldsPanel = new JPanel(new GridLayout(2,2));
 
-        JLabel portLabel = new JLabel();
-        portLabel.setText("Port: ");
-
-        NumberFormat numberFormat = NumberFormat.getNumberInstance(Locale.getDefault());
-        numberFormat.setGroupingUsed(false);
-        numberFormat.setMaximumIntegerDigits(5);
-        numberFormat.setMaximumFractionDigits(5);
-
-        final JFormattedTextField  portField = new JFormattedTextField(numberFormat);
-        portField.setText(Integer.toString(UnityConnectorServer.getInstance().getPort()));
-        portField.setColumns(5);
-
         JLabel startServerLabel = new JLabel();
-        startServerLabel.setText("Start listening: ");
+        startServerLabel.setText("Listening Unity: ");
 
         JCheckBox cb = new JCheckBox();
         cb.setSelected(UnityConnectorServer.getInstance().isRunning());
         cb.addActionListener(e -> {
-            int port = Integer.parseInt(portField.getText());
             JCheckBox cb1 = (JCheckBox)e.getSource();
             if(cb1.isSelected()) {
-                boolean started = UnityConnectorServer.getInstance().startServer(port, project);
+                boolean started = UnityConnectorServer.getInstance().startServer();
                 cb1.setSelected(started);
             } else {
                 UnityConnectorServer.getInstance().stopServer();
             }
         });
 
-        fieldsPanel.add(portLabel);
-        fieldsPanel.add(portField);
         fieldsPanel.add(startServerLabel);
         fieldsPanel.add(cb);
 

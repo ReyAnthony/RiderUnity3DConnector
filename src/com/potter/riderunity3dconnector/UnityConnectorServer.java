@@ -3,8 +3,14 @@ package com.potter.riderunity3dconnector;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.fileEditor.OpenFileDescriptor;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.project.ex.ProjectManagerEx;
 import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.platform.ProjectBaseDirectory;
+import com.jetbrains.resharper.projectView.ideaInterop.RiderProjectOpenProcessor;
+import com.jetbrains.resharper.protocol.components.SolutionHost;
+import com.jetbrains.rider.model.OpenExistingSolution;
+import com.jetbrains.rider.model.SolutionOpenStrategy;
 
 import java.io.IOException;
 import java.net.DatagramPacket;
@@ -30,15 +36,13 @@ public class UnityConnectorServer {
         return INSTANCE;
     }
 
-    public boolean startServer(int port, Project project) {
-        this.project = project;
+    public boolean startServer() {
         if (serverRunnable != null && serverRunnable.isRunning()) {
             // Server is already running
             return true;
         }
         try {
             datagramSocket = new DatagramSocket(port);
-            this.port = port;
             serverRunnable = new ServerRunnable();
             executorService.execute(serverRunnable);
             return true;
@@ -81,6 +85,11 @@ public class UnityConnectorServer {
                     String text = new String(data);
                     final String[] splits = text.split("\r\n");
                     ApplicationManager.getApplication().invokeLater(() -> {
+
+                        String slnFilePath = splits[1];
+                        SolutionOpenStrategy strategy = new OpenExistingSolution(slnFilePath, true);
+                        project = RiderProjectOpenProcessor.Companion.doOpenSolution(null, false, strategy);
+
                         VirtualFile vf = LocalFileSystem.getInstance().findFileByPath(splits[2]);
 
                         int line = Integer.parseInt(splits[0]) - 1;

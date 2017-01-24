@@ -19,10 +19,11 @@
   <idea-version since-build="107.105"/>
 
   <depends>com.intellij.modules.lang</depends>
+  <depends>com.intellij.modules.rider</depends>
 
-  <project-components>
-    <component><implementation-class>com.potter.riderunity3dconnector.UnityConnectorProjectComponent</implementation-class></component>
-  </project-components>
+  <application-components>
+    <component><implementation-class>com.potter.riderunity3dconnector.UnityConnectorApplicationComponent</implementation-class></component>
+  </application-components>
 
   <extensions defaultExtensionNs="com.intellij">
     <!-- Add your extensions here -->
