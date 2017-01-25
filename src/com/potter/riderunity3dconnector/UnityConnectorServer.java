@@ -1,14 +1,12 @@
 package com.potter.riderunity3dconnector;
 
+import com.intellij.ide.impl.ProjectUtil;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.fileEditor.OpenFileDescriptor;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.project.ex.ProjectManagerEx;
 import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.platform.ProjectBaseDirectory;
 import com.jetbrains.resharper.projectView.ideaInterop.RiderProjectOpenProcessor;
-import com.jetbrains.resharper.protocol.components.SolutionHost;
 import com.jetbrains.rider.model.OpenExistingSolution;
 import com.jetbrains.rider.model.SolutionOpenStrategy;
 
@@ -110,6 +108,7 @@ public class UnityConnectorServer {
                     byte[] sendData = sendDataRaw.getBytes();
                     DatagramPacket sendPacket = new DatagramPacket(sendData, sendData.length, senderAddress, senderPort);
                     datagramSocket.send(sendPacket);
+                    ProjectUtil.focusProjectWindow(project,true);
                 } catch (IOException e) {
                     e.printStackTrace();
                     stop();
