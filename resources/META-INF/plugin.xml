@@ -1,19 +1,12 @@
 <idea-plugin version="2">
   <id>com.potter.riderunity3dconnector</id>
   <name>Rider Unity3d Connector</name>
-  <version>1.1</version>
+  <version>1.2</version>
   <vendor email="alexron782@gmail.com" url="https://github.com/PotterDai/RiderUnity3DConnector">Potter</vendor>
 
   <description><![CDATA[
-      Enter short description for your plugin here.<br>
-      <em>most HTML tags may be used</em>
+      This plugin will setup a UDP server to let Unity3D directly send "go to file/line" requests instead of opening a new app.
     ]]></description>
-
-  <change-notes><![CDATA[
-      Add change notes here.<br>
-      <em>most HTML tags may be used</em>
-    ]]>
-  </change-notes>
 
   <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
   <idea-version since-build="107.105"/>
