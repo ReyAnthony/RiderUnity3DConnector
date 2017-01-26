@@ -100,6 +100,8 @@ public class UnityConnectorServer {
                         }
 
                         new OpenFileDescriptor(project, vf, line, column).navigate(true);
+
+                        ProjectUtil.focusProjectWindow(project,true);
                     });
 
                     InetAddress senderAddress = datagramPacket.getAddress();
@@ -108,7 +110,6 @@ public class UnityConnectorServer {
                     byte[] sendData = sendDataRaw.getBytes();
                     DatagramPacket sendPacket = new DatagramPacket(sendData, sendData.length, senderAddress, senderPort);
                     datagramSocket.send(sendPacket);
-                    ProjectUtil.focusProjectWindow(project,true);
                 } catch (IOException e) {
                     e.printStackTrace();
                     stop();
