@@ -6,6 +6,7 @@ import com.intellij.openapi.fileEditor.OpenFileDescriptor
 import com.intellij.openapi.project.Project
 import com.intellij.openapi.vfs.LocalFileSystem
 import com.jetbrains.resharper.projectView.ideaInterop.RiderProjectOpenProcessor
+import com.jetbrains.resharper.util.idea.getLogger
 import com.jetbrains.rider.model.OpenExistingSolution
 import java.io.IOException
 import java.net.DatagramPacket
@@ -19,19 +20,21 @@ class UnityConnectorServer private constructor() {
     @Volatile private var datagramSocket: DatagramSocket? = null
     val port = 11234
     private var project: Project? = null
+    private val logger = getLogger(this)
 
     fun startServer(): Boolean {
         if (serverRunnable != null && serverRunnable!!.isRunning) {
             // Server is already running
             return true
         }
+        logger.info("UnityConnectorServer started.")
         try {
             datagramSocket = DatagramSocket(port)
             serverRunnable = ServerRunnable()
             executorService.execute(serverRunnable!!)
             return true
         } catch (e: IOException) {
-            e.printStackTrace()
+            logger.error(e)
             return false
         }
 
@@ -82,7 +85,7 @@ class UnityConnectorServer private constructor() {
                             column = Integer.parseInt(splits[0]) - 1
                             if (column < 0) column = 0
                         }
-
+                        throw Exception("test")
                         OpenFileDescriptor(project!!, vf!!, line, column).navigate(true)
 
                         ProjectUtil.focusProjectWindow(project, true)
@@ -94,8 +97,8 @@ class UnityConnectorServer private constructor() {
                     val sendData = sendDataRaw.toByteArray()
                     val sendPacket = DatagramPacket(sendData, sendData.size, senderAddress, senderPort)
                     datagramSocket!!.send(sendPacket)
-                } catch (e: IOException) {
-                    e.printStackTrace()
+                } catch (e: Exception) {
+                    logger.warn(e)
                     stop()
                 }
             }
