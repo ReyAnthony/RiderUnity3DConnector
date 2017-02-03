@@ -1,5 +1,5 @@
 # RiderUnity3DConnector
 Rider Unity3D UDP connector to make file open/close much faster
 
-1. Install this plugin in Rider.
-2. Use this fork for Unity Editor. https://github.com/PotterDai/Unity3dRider.git
+1. Drag this plugin to Unity3d Project https://github.com/JetBrains/Unity3dRider
+2. Install this plugin in Rider.
