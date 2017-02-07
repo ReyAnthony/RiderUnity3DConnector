@@ -85,9 +85,8 @@ class UnityConnectorServer private constructor() {
                             column = Integer.parseInt(splits[0]) - 1
                             if (column < 0) column = 0
                         }
-                        throw Exception("test")
-                        OpenFileDescriptor(project!!, vf!!, line, column).navigate(true)
 
+                        OpenFileDescriptor(project!!, vf!!, line, column).navigate(true)
                         ProjectUtil.focusProjectWindow(project, true)
                     }
 
@@ -98,9 +97,10 @@ class UnityConnectorServer private constructor() {
                     val sendPacket = DatagramPacket(sendData, sendData.size, senderAddress, senderPort)
                     datagramSocket!!.send(sendPacket)
                 } catch (e: Exception) {
-                    logger.warn(e)
                     stop()
+                    throw e
                 }
+
             }
         }
 
