@@ -1,22 +1,18 @@
 package com.potter.riderunity3dconnector
 
-import com.intellij.execution.RunManager
 import com.intellij.execution.RunManagerEx
-import com.intellij.execution.RunnerAndConfigurationSettings
-import com.intellij.execution.configurations.ConfigurationInfoProvider
-import com.intellij.execution.impl.RunManagerImpl
-import com.intellij.execution.impl.RunnerAndConfigurationSettingsImpl
-import com.intellij.ide.util.PropertiesComponent
 import com.intellij.openapi.components.AbstractProjectComponent
 import com.intellij.openapi.project.Project
+import com.intellij.util.io.isFile
 import com.jetbrains.resharper.run.configurations.remote.DotNetRemoteConfiguration
 import com.jetbrains.resharper.run.configurations.remote.DotNetRemoteConfigurationFactory
-import com.jetbrains.resharper.run.configurations.remote.MonoAttachConfiguration
 import com.jetbrains.resharper.run.configurations.remote.MonoRemoteConfigType
 import com.jetbrains.resharper.run.configurations.remote.Unity.UnityLocalAttachConfiguration
 import com.jetbrains.resharper.util.idea.ILifetimedComponent
 import com.jetbrains.resharper.util.idea.LifetimedComponent
 import com.jetbrains.resharper.util.idea.getLogger
+import java.io.File
+import java.nio.file.Files
 
 /**
  * Created by Ivan.Shakhov on 03.02.2017.
@@ -29,7 +25,8 @@ class UnityConnectorProjectComponent(val project: Project) : AbstractProjectComp
     }
     override fun projectOpened() {
         val pid = System.getenv("unityProcessId");
-        if (pid!=null) {
+        val referencesUnity = Files.walk(File(project.baseDir.path).toPath()).filter({ a -> a.isFile() && a.toFile().extension == "csproj" && a.toFile().readText().contains("UnityEngine.dll")}).count()>0
+        if (pid!=null && referencesUnity) {
             var id = Integer.valueOf(pid)
             val unityConfig = UnityLocalAttachConfiguration("temp", id)
             var runManager = RunManagerEx.getInstance(project)
