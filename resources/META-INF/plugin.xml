@@ -1,7 +1,7 @@
 <idea-plugin version="2">
   <id>com.potter.riderunity3dconnector</id>
   <name>Rider Unity3d Connector</name>
-  <version>1.3</version>
+  <version>1.4</version>
   <vendor email="alexron782@gmail.com" url="https://github.com/PotterDai/RiderUnity3DConnector">Potter</vendor>
 
   <description><![CDATA[
