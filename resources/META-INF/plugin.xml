@@ -19,7 +19,7 @@
   </application-components>
 
   <project-components>
-    <component><implementation-class>com.potter.riderunity3dconnector.runConfig.UnityConnectorProjectComponent</implementation-class></component>
+    <component><implementation-class>com.potter.riderunity3dconnector.UnityConnectorProjectComponent</implementation-class></component>
   </project-components>
 
   <extensions defaultExtensionNs="com.intellij">
