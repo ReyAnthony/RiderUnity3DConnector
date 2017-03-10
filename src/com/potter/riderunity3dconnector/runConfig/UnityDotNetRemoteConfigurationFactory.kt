@@ -7,7 +7,7 @@ import com.jetbrains.resharper.run.configurations.DotNetConfigurationFactoryBase
 /**
  * Created by Ivan.Shakhov on 14.02.2017.
  */
-class UnityDotNetRemoteConfigurationFactory(unityMonoRemoteConfigType: UnityMonoRemoteConfigType) : DotNetConfigurationFactoryBase<UnityDotNetRemoteConfiguration>(unityMonoRemoteConfigType){
+class UnityDotNetRemoteConfigurationFactory(unityMonoRemoteConfigType: UnityMonoRemoteDebugConfigType) : DotNetConfigurationFactoryBase<UnityDotNetRemoteConfiguration>(unityMonoRemoteConfigType){
 
     override fun createTemplateConfiguration(project: Project): RunConfiguration = UnityDotNetRemoteConfiguration(project, this, "")
 }
